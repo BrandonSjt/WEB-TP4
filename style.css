@@ -179,8 +179,11 @@ body {
 
 /* Media Query untuk tampilan responsif */
 @media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
-    navbar {
-        padding: 1rem; /* Kurangi padding agar tidak terlalu makan tempat */
+    .navbar {
+        flex-direction: column; /* Susun logo & nav-links secara vertikal */
+        align-items: center;    /* Posisikan di tengah */
+        gap: 15px;              /* Beri jarak antara logo dan daftar link */
+        padding: 1rem;
     }
 
     .logo img {
@@ -188,10 +191,15 @@ body {
     }
 
     .nav-links {
-        display: none; /* Sembunyikan link navigasi di HP untuk sementara */
+        flex-direction: column; /* Susun link (li) secara vertikal */
+        align-items: center;
+        gap: 10px;              /* Beri jarak antar link */
     }
 
-    /* 2. PERBAIKAN UNTUK SECTION HOME */
+    .nav-links li {
+        margin-left: 0;         /* Hapus margin kiri dari versi desktop */
+    }
+
     .home-content h2 {
         font-size: 2.2rem; /* Perkecil ukuran font judul */
     }
@@ -206,3 +214,4 @@ body {
     }
 
 }
+

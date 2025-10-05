@@ -292,14 +292,18 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .about-content { /* Gaya untuk konten about pada layar kecil */
-        /* Ubah menjadi horizontal (menyamping) untuk desktop */
-        flex-direction: row;
+    
+}
+
+@media (min-width: 769px) {
+    
+    /* Aturan ini hanya aktif untuk layar lebar (desktop) */
+    .about-content {
+        flex-direction: row; /* Ubah menjadi menyamping */
         gap: 50px;
-        text-align: left;
     }
 
-    .about-text p { /* Gaya untuk teks about pada layar kecil */
-        text-align: left; /* Paragraf rata kiri di desktop agar mudah dibaca */
+    .about-text p {
+        text-align: left;
     }
 }

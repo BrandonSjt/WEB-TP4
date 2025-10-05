@@ -179,12 +179,30 @@ body {
 
 /* Media Query untuk tampilan responsif */
 @media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
-    .gallery {
-        /* Mengubah menjadi 2 kolom di layar kecil */
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar kecil */
+    navbar {
+        padding: 1rem; /* Kurangi padding agar tidak terlalu makan tempat */
     }
 
-    .nav-links { /* Gaya untuk daftar link navigasi di mobile */
-        display: none; /* Menyembunyikan link di mobile, bisa diganti menu hamburger */
+    .logo img {
+        height: 30px; /* Perkecil ukuran logo di HP */
     }
+
+    .nav-links {
+        display: none; /* Sembunyikan link navigasi di HP untuk sementara */
+    }
+
+    /* 2. PERBAIKAN UNTUK SECTION HOME */
+    .home-content h2 {
+        font-size: 2.2rem; /* Perkecil ukuran font judul */
+    }
+    
+    .home-content h2 span {
+        font-size: 2.5rem; /* Perkecil juga ukuran font span */
+    }
+
+    /* Aturan untuk gallery yang sudah ada sebelumnya */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }

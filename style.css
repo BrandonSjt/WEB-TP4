@@ -268,6 +268,22 @@ body {
         display: flex; /* Menampilkan menu */
     }
 
+    /* Animasi untuk ikon hamburger saat di klik */
+    /* 1. Putar garis pertama menjadi / */
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /* 2. Sembunyikan garis tengah */
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+
+    /* 3. Putar garis ketiga menjadi \ */
+    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .home-content h2 { /* Gaya untuk judul utama pada layar kecil */
         font-size: 1.5rem; /* Perkecil ukuran font judul */
     }

@@ -122,6 +122,17 @@ body {
     transition: all 0.3s;
 }
 
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
 /* Efek hover untuk item navigasi */
 .nav-links a:hover { /* Saat link disentuh mouse */
     color: #00bcd4; /* Mengubah warna saat disentuh mouse */
@@ -266,20 +277,6 @@ body {
 
     .nav-toggle:checked ~ .nav-links { /* Menampilkan menu saat checkbox dicentang */
         display: flex; /* Menampilkan menu */
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) { /* 1. Putar garis pertama menjadi / */
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    /* 2. Sembunyikan garis tengah */
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) { /* Sembunyikan garis tengah */
-        opacity: 0;
-    }
-
-    /* 3. Putar garis ketiga menjadi \ */
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) { /* Putar garis ketiga menjadi \ */
-        transform: translateY(-8px) rotate(-45deg);
     }
 
     .home-content h2 { /* Gaya untuk judul utama pada layar kecil */

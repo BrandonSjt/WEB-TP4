@@ -101,6 +101,27 @@ body {
     transition: color 0.3s ease;
 }
 
+/* Sembunyikan checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Styling untuk ikon hamburger (disembunyikan di desktop) */
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+/* Styling untuk 3 garis di dalam ikon hamburger */
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Sesuaikan dengan warna teks/logo Anda */
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
 /* Efek hover untuk item navigasi */
 .nav-links a:hover { /* Saat link disentuh mouse */
     color: #00bcd4; /* Mengubah warna saat disentuh mouse */
@@ -179,39 +200,42 @@ body {
 
 /* Media Query untuk tampilan responsif */
 @media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
-    .navbar {
-        flex-direction: column; /* Susun logo & nav-links secara vertikal */
-        align-items: center;    /* Posisikan di tengah */
-        gap: 15px;              /* Beri jarak antara logo dan daftar link */
-        padding: 1rem;
-    }
 
-    .logo img {
-        height: 30px; /* Perkecil ukuran logo di HP */
-    }
-
-    .nav-links {
-        flex-direction: column; /* Susun link (li) secara vertikal */
+    .nav-links { /* Gaya untuk daftar link navigasi pada layar kecil */
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;              /* Beri jarak antar link */
+        padding: 20px 0;
     }
 
-    .nav-links li {
-        margin-left: 0;         /* Hapus margin kiri dari versi desktop */
+    .nav-links li { /* Gaya untuk item dalam daftar pada layar kecil */
+        margin-left: 0;
+        padding: 10px 0;
     }
 
-    .home-content h2 {
-        font-size: 2.2rem; /* Perkecil ukuran font judul */
+    .nav-toggle-label { /* Menampilkan ikon hamburger pada layar kecil */
+        display: block; /* Menampilkan ikon hamburger */
+    }
+
+    .nav-toggle:checked ~ .nav-links { /* Menampilkan menu saat checkbox dicentang */
+        display: flex; /* Menampilkan menu */
+    }
+
+    .home-content h2 { /* Gaya untuk judul utama pada layar kecil */
+        font-size: 1.5rem; /* Perkecil ukuran font judul */
     }
     
-    .home-content h2 span {
-        font-size: 2.5rem; /* Perkecil juga ukuran font span */
+    .home-content h2 span { /* Gaya untuk teks dalam span pada layar kecil */
+        font-size: 1.7rem; /* Perkecil juga ukuran font span */
     }
 
     /* Aturan untuk gallery yang sudah ada sebelumnya */
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
-

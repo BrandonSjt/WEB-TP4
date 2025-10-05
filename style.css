@@ -1,0 +1,190 @@
+/* Gaya Umum untuk Body */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* --- Gaya Halaman Login (Tahap 1) --- */
+.login-body { /* Gaya untuk body halaman login */
+    background-color: #34495e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-form { /* Gaya untuk form login */
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.login-form h1 { /* Gaya untuk judul form */
+    margin-bottom: 20px; /* Jarak bawah untuk judul */
+}
+
+.login-form input { /* Gaya untuk input teks */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+}
+
+/* Gaya untuk input:focus */
+.login-form input:focus { /* Saat input diklik atau difokuskan */
+    background-color: #e0f7fa; /* Latar belakang sian saat diklik */
+    outline: none; /* Menghilangkan outline default */
+    border-color: #007BFF;
+}
+
+.login-form button { /* Gaya untuk button */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transisi yang mulus */
+}
+
+/* Gaya untuk button:hover */
+.login-form button:hover { /* Saat button disentuh mouse */
+    background-color: black; /* Mengubah warna saat disentuh mouse */
+    color: white; /* Warna teks tetap putih */
+}
+
+
+/* --- Gaya Halaman Utama (Tahap 2) --- */
+
+/* 2.A: Navbar */
+.navbar { /* Gaya untuk navbar */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: space-between; /* Mendorong logo & link menjauh */
+    align-items: center; /* Menyelaraskan secara vertikal */
+    background-color: #333;
+    padding: 1rem 2rem; /* Padding di sekitar navbar */
+    position: sticky; /* Membuat navbar tetap di atas */
+    top: 0; /* Posisi atas */
+    z-index: 1000; /* Memastikan navbar di atas konten lain */
+}
+
+
+
+.logo img { /* Gaya untuk logo */
+    height: 110px;
+    width: auto; /* Menjaga rasio aspek */
+}
+
+.nav-links { /* Gaya untuk daftar link navigasi */
+    list-style: none;/* Menghilangkan bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li { /* Gaya untuk item dalam daftar */
+    margin-left: 20px;
+}
+
+.nav-links a { /* Gaya untuk link navigasi */
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Efek hover untuk item navigasi */
+.nav-links a:hover { /* Saat link disentuh mouse */
+    color: #00bcd4; /* Mengubah warna saat disentuh mouse */
+}
+
+/* 2.B: Bagian Home */
+.home-section { /* Gaya untuk bagian home */
+    display: flex; /* Menggunakan flexbox untuk menengahkan konten */
+    
+    align-items: center;
+    height: 80vh;
+    background-image: url('anime_city_buildings_under_white_clouds_blue_sky_4k_hd_anime.jpg'); /* Gambar placeholder */
+    background-size: cover; /* Menutupi seluruh area */
+    background-position: center; /* Memusatkan gambar */
+    color: white; /* Warna teks putih */
+    padding-left: 10%; /* Memberi jarak dari kiri */;
+}
+
+.home-content h2 { /* Gaya untuk judul utama */
+    font-size: 3rem; /* Ukuran font besar */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Bayangan teks untuk keterbacaan */
+}
+
+.home-content h2 span { /* Gaya untuk teks dalam span */
+    font-size: 4rem; /* Ukuran font berbeda */
+    color: #11dbf2; /* Warna berbeda */
+}
+
+.home-content p { /* Gaya untuk paragraf tambahan */
+    font-size: 1.2rem; /* Ukuran font sedang */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Bayangan teks untuk keterbacaan */
+}
+
+
+/* 2.C: Bagian Collections */
+.collections-section { /* Gaya untuk bagian collections */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.collections-section h2 { /* Gaya untuk judul collections */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.gallery { /* Gaya untuk galeri */
+    display: grid;
+    /* Membuat 4 kolom dengan lebar sama di layar besar */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card { /* Gaya untuk setiap card */
+    background-color: white; /* Latar belakang putih untuk card */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; /* Memastikan sudut gambar mengikuti card */
+    
+}
+
+.card img { /* Gaya untuk gambar dalam card */
+    width: 100%; /* Membuat gambar memenuhi lebar card */
+    height: 200px; /* Tinggi tetap untuk konsistensi */
+    object-fit: cover; /* Memastikan gambar menutupi area tanpa merusak rasio aspek */
+    display: block; /* Menghilangkan jarak bawah pada gambar */
+}
+
+.card p { /* Gaya untuk teks di bawah gambar */
+    font-weight: bold;
+    padding: 15px; /* Memberi jarak di dalam card */
+    margin: 0; /* Menghilangkan margin default */
+    
+}
+
+/* Media Query untuk tampilan responsif */
+@media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
+    .gallery {
+        /* Mengubah menjadi 2 kolom di layar kecil */
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar kecil */
+    }
+
+    .nav-links { /* Gaya untuk daftar link navigasi di mobile */
+        display: none; /* Menyembunyikan link di mobile, bisa diganti menu hamburger */
+    }
+}

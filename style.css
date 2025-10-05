@@ -198,6 +198,48 @@ body {
     
 }
 
+/* Bagian About */
+.about-section { /* Gaya untuk bagian about */
+    background-color: #f4f4f4; /* Warna latar belakang, sesuaikan jika perlu */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-section h2 { /* Gaya untuk judul about */
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.about-content { /* Gaya untuk konten about */
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+
+    /* Tampilan default untuk HP: Vertikal (ke bawah) */
+    flex-direction: column; 
+    gap: 20px;
+}
+
+.profile-pic-container { /* Gaya untuk kontainer gambar profil */
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+}
+
+.profile-pic { /* Gaya untuk gambar profil */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-text p { /* Gaya untuk teks about */
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify; /* Agar teks paragraf rata kiri-kanan */
+}
+
+
 /* Media Query untuk tampilan responsif */
 @media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
 
@@ -237,5 +279,16 @@ body {
     /* Aturan untuk gallery yang sudah ada sebelumnya */
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content { /* Gaya untuk konten about pada layar kecil */
+        /* Ubah menjadi horizontal (menyamping) untuk desktop */
+        flex-direction: row;
+        gap: 50px;
+        text-align: left;
+    }
+
+    .about-text p { /* Gaya untuk teks about pada layar kecil */
+        text-align: left; /* Paragraf rata kiri di desktop agar mudah dibaca */
     }
 }

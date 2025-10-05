@@ -243,45 +243,99 @@ body {
 /* Media Query untuk tampilan responsif */
 @media (max-width: 768px) { /* Untuk layar dengan lebar maksimum 768px (tablet & mobile) */
 
-    .nav-links { /* Gaya untuk daftar link navigasi pada layar kecil */
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* --- Aturan Dasar untuk Hamburger Menu (Disembunyikan di Desktop) --- */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none; /* Disembunyikan di desktop */
+    cursor: pointer;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/* Aturan untuk mengubah ikon ☰ menjadi X (tanpa animasi) */
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --- Aturan Khusus untuk Tampilan Mobile --- */
+@media (max-width: 768px) {
+
+    /* Sembunyikan link navigasi desktop */
+    .nav-links { /* Gaya untuk daftar link navigasi */
         display: none;
         position: absolute;
-        top: 60px;
+        top: 100%; /* Posisi tepat di bawah navbar */
         left: 0;
         width: 100%;
         background-color: #333;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 1rem 0;
     }
 
-    .nav-links li { /* Gaya untuk item dalam daftar pada layar kecil */
+    .nav-links li { /* Gaya untuk item dalam daftar */
         margin-left: 0;
-        padding: 10px 0;
+        padding: 0.5rem 0;
     }
 
-    .nav-toggle-label { /* Menampilkan ikon hamburger pada layar kecil */
-        display: block; /* Menampilkan ikon hamburger */
+    /* Tampilkan ikon hamburger */
+    .nav-toggle-label { /* Gaya untuk ikon hamburger */
+        display: block;
     }
 
-    .nav-toggle:checked ~ .nav-links { /* Menampilkan menu saat checkbox dicentang */
-        display: flex; /* Menampilkan menu */
+    /* Tampilkan menu saat hamburger diklik */
+    .nav-toggle:checked ~ .nav-links {/* Menampilkan menu saat checkbox dicentang */
+        display: flex;
     }
-
-    /* Animasi untuk ikon hamburger saat di klik */
-    /* 1. Putar garis pertama menjadi / */
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    /* 2. Sembunyikan garis tengah */
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
-        opacity: 0;
-    }
-
-    /* 3. Putar garis ketiga menjadi \ */
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    
     }
 
     .home-content h2 { /* Gaya untuk judul utama pada layar kecil */
